@@ -1,0 +1,482 @@
+/* ===================================================
+   UNDERSTAND VIEW STYLES — Phase 4A
+   Aesthetic: Dark fintech, calm analytical surfaces, non-alarmist
+   =================================================== */
+
+.understand-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  animation: viewSlideIn 220ms var(--ease-snappy, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+/* --- Top Bar --- */
+.understand-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(10, 15, 12, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.understand-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: all 140ms ease;
+}
+
+.understand-back-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.understand-top-center {
+  display: flex;
+  align-items: center;
+}
+
+.understand-top-step {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FB7185;
+  background: rgba(251, 113, 133, 0.08);
+  border: 1px solid rgba(251, 113, 133, 0.2);
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.understand-persona-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+/* --- Scrollable Content --- */
+.understand-scroll-content {
+  padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)) !important;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===================================================
+   UNDERSTAND HERO
+   =================================================== */
+
+.understand-hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.understand-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(251, 113, 133, 0.8), transparent);
+}
+
+.understand-hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.understand-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.understand-badge-soft {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #FB7185;
+  background: rgba(251, 113, 133, 0.08);
+  border: 1px solid rgba(251, 113, 133, 0.2);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.understand-hero-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.understand-delta-strip {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(251, 113, 133, 0.04);
+  border: 1px solid rgba(251, 113, 133, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.understand-delta-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #FB7185;
+  letter-spacing: -0.02em;
+}
+
+.understand-delta-pct {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.understand-hero-subtext {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ===================================================
+   GENERIC UNDERSTAND CARD
+   =================================================== */
+
+.understand-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.understand-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.understand-step-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.step-tag-icon {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.understand-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.understand-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.understand-body-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.understand-micro-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-top: 4px;
+}
+
+.micro-note-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Meaning Takeaway Box */
+.meaning-takeaway-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(0, 208, 156, 0.05);
+  border-left: 2px solid var(--brand-emerald);
+  padding: 10px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.takeaway-icon {
+  color: var(--brand-emerald);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.takeaway-text {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.takeaway-text strong {
+  color: var(--text-primary);
+}
+
+/* Goal Status Box in GoalImpactCard */
+.goal-status-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goal-status-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.goal-status-info {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.goal-status-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.goal-status-cat {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.goal-status-pct {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand-emerald);
+}
+
+.goal-status-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.goal-status-fill {
+  height: 100%;
+  background: var(--brand-emerald);
+  border-radius: 999px;
+}
+
+.goal-impact-statement {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.impact-check-icon {
+  color: var(--brand-emerald);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.impact-statement-text {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Next Step Card Actions */
+.understand-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.understand-primary-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #00D09C 0%, #00B386 100%);
+  color: #070A0E;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: all 160ms var(--ease-snappy);
+  box-shadow: 0 4px 16px rgba(0, 208, 156, 0.28);
+  box-sizing: border-box;
+}
+
+.understand-primary-cta:hover {
+  background: #00b887;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 208, 156, 0.38);
+}
+
+.understand-secondary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 140ms ease;
+  box-sizing: border-box;
+}
+
+.understand-secondary-btn:hover {
+  color: #FFFFFF;
+  background: var(--bg-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===================================================
+   CONTEXTUAL EVENT ENTRY CARD ON DECIDE SCREEN
+   =================================================== */
+
+.contextual-event-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(251, 113, 133, 0.22);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  margin-top: 14px;
+}
+
+.event-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.event-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FB7185;
+}
+
+.event-card-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.event-card-subtitle {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.event-card-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  min-height: 36px;
+  background: rgba(251, 113, 133, 0.16);
+  border: 1px solid rgba(251, 113, 133, 0.38);
+  color: #FDA4AF;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: all 140ms ease;
+  box-sizing: border-box;
+}
+
+.event-card-action-btn:hover {
+  background: rgba(251, 113, 133, 0.26);
+  color: #FFF1F2;
+  border-color: rgba(251, 113, 133, 0.55);
+}

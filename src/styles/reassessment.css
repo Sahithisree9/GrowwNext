@@ -1,0 +1,580 @@
+/* ─────────────────────────────────────────────────────────────
+   PHASE 5 — CONTEXTUAL REASSESSMENT STYLES
+   Groww for Gen-Z Design System
+   Dark fintech palette, emerald accents, amber highlights,
+   scannable before/after comparison grids, and micro-transitions.
+───────────────────────────────────────────────────────────── */
+
+/* ── Decide Screen Entry Card (Phase 5) ── */
+.contextual-event-card.reassessment-card-theme {
+  border-color: rgba(245, 166, 35, 0.32);
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.08) 0%, rgba(21, 25, 33, 0.95) 100%);
+  margin-top: 4px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.event-card-badge.reassessment-badge-theme {
+  color: #F5A623;
+}
+
+.event-card-action-btn.reassessment-btn-theme {
+  background: rgba(245, 166, 35, 0.18);
+  border-color: rgba(245, 166, 35, 0.45);
+  color: #FFC043;
+  font-weight: 700;
+  min-height: 36px;
+  padding: 8px 14px;
+}
+
+.event-card-action-btn.reassessment-btn-theme:hover {
+  background: rgba(245, 166, 35, 0.28);
+  border-color: rgba(245, 166, 35, 0.65);
+  color: #FFF2D1;
+}
+
+/* ── Reassessment View Container ── */
+.reassessment-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-app);
+}
+
+.reassessment-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(11, 15, 21, 0.94);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.reassessment-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease;
+}
+
+.reassessment-back-btn:hover {
+  color: var(--text-primary);
+}
+
+.reassessment-top-center {
+  display: flex;
+  align-items: center;
+}
+
+.reassessment-top-step {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #F5A623;
+  background: rgba(245, 166, 35, 0.12);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.reassessment-persona-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.reassessment-scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 32px;
+}
+
+/* ── Hero Event Card ── */
+.reassessment-hero-card {
+  background: linear-gradient(145deg, rgba(245, 166, 35, 0.12) 0%, rgba(21, 25, 33, 0.95) 100%);
+  border: 1px solid rgba(245, 166, 35, 0.28);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.reassessment-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(245, 166, 35, 0.18);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #F5A623;
+  margin-bottom: 12px;
+}
+
+.reassessment-hero-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.reassessment-hero-amount-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.reassessment-hero-amount {
+  font-size: 32px;
+  font-weight: 800;
+  color: #00D09C;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0;
+}
+
+.reassessment-hero-source-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #FFC043;
+  background: rgba(245, 166, 35, 0.14);
+  border: 1px solid rgba(245, 166, 35, 0.25);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+}
+
+.reassessment-hero-subtext {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ── Section Cards ── */
+.reassessment-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reassessment-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.reassessment-section-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.reassessment-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.reassessment-card-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+/* ── 1. Before vs After Context Grid ── */
+.context-comparison-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.context-state-card {
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.context-before {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.context-after {
+  background: rgba(0, 208, 156, 0.04);
+  border: 1px solid rgba(0, 208, 156, 0.22);
+}
+
+.context-state-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.context-after-label {
+  color: #00D09C;
+}
+
+.context-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.metric-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.metric-val {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-val-highlight {
+  font-size: 18px;
+  color: #00D09C;
+}
+
+.context-submetric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.context-submetric strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.buffer-status-tag {
+  color: #F5A623;
+  font-weight: 600;
+}
+
+.context-transition-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 2px 0;
+}
+
+.transition-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #00D09C;
+  background: rgba(0, 208, 156, 0.12);
+  border: 1px solid rgba(0, 208, 156, 0.25);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ── 2. Contextual Reasoning Section ── */
+.reasoning-explanation-box {
+  background: rgba(245, 166, 35, 0.06);
+  border: 1px solid rgba(245, 166, 35, 0.20);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reasoning-lead-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.reasoning-lead-icon {
+  color: #F5A623;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.reasoning-lead-text {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.reasoning-lead-text strong {
+  color: #FFC043;
+}
+
+.reasoning-body-text {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 28px;
+}
+
+/* Tradeoffs List */
+.tradeoffs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.tradeoff-item {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 12px;
+}
+
+.tradeoff-icon-col {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tradeoff-icon-col.emerald {
+  background: rgba(0, 208, 156, 0.12);
+  color: #00D09C;
+}
+
+.tradeoff-icon-col.amber {
+  background: rgba(245, 166, 35, 0.12);
+  color: #F5A623;
+}
+
+.tradeoff-icon-col.indigo {
+  background: rgba(124, 131, 253, 0.12);
+  color: #7C83FD;
+}
+
+.tradeoff-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tradeoff-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tradeoff-desc {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── 3. Intent Selection & Guidance ── */
+.reassessment-intent-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reassessment-intent-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.reassessment-intent-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.reassessment-intent-btn-active {
+  background: rgba(0, 208, 156, 0.06);
+  border-color: rgba(0, 208, 156, 0.35);
+  box-shadow: 0 0 12px rgba(0, 208, 156, 0.10);
+}
+
+.intent-btn-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+}
+
+.reassessment-intent-btn-active .intent-btn-top {
+  color: #00D09C;
+}
+
+.intent-btn-label {
+  font-size: 13px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.intent-recommended-pill {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(0, 208, 156, 0.15);
+  color: #00D09C;
+  border: 1px solid rgba(0, 208, 156, 0.30);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.intent-btn-desc {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin: 0;
+  padding-left: 24px;
+}
+
+/* Allocation Preview */
+.reassessment-preview-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.reassessment-preview-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.preview-header-eyebrow {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.preview-header-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.reassessment-alloc-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reassessment-engine-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* ── 4. CTA Area ── */
+.reassessment-cta-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0 16px 0;
+}
+
+.reassessment-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  background: linear-gradient(135deg, #00D09C 0%, #00B386 100%);
+  color: #060A0E;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 16px rgba(0, 208, 156, 0.28);
+  box-sizing: border-box;
+}
+
+.reassessment-cta-btn:hover {
+  background: #00b887;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 208, 156, 0.38);
+}
+
+.reassessment-cta-footnote {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+}

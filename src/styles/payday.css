@@ -1,0 +1,474 @@
+/* =====================================================
+   PAYDAY VIEW — Phase 2A Styles
+   Extends: designTokens.css (no duplication of tokens)
+   ===================================================== */
+
+/* --- Payday View Shell --- */
+.payday-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  animation: viewSlideIn 220ms var(--ease-snappy);
+}
+
+@keyframes viewSlideIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* --- Payday Header (back nav + title) --- */
+.payday-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(11, 15, 21, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  flex-shrink: 0;
+}
+
+.payday-back-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.payday-back-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.payday-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.payday-header-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.payday-header-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* Override app-content padding for payday view — clears the 66px bottom nav */
+.payday-content {
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* --- Incoming Money Card --- */
+.incoming-money-card {
+  background: linear-gradient(145deg, #0D1F18 0%, #0C1A14 100%);
+  border: 1px solid rgba(0, 208, 156, 0.22);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 208, 156, 0.07);
+}
+
+.incoming-money-card::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(0, 208, 156, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.incoming-received-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--groww-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.incoming-label-icon {
+  opacity: 0.8;
+}
+
+.incoming-amount-display {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.incoming-currency {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--groww-primary);
+  line-height: 1;
+}
+
+.incoming-digits {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.incoming-amount-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  background: var(--groww-primary-subtle);
+  border: 1px solid rgba(0, 208, 156, 0.25);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--groww-primary);
+  margin-left: 6px;
+  align-self: center;
+}
+
+.incoming-context-note {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  border-top: 1px solid rgba(0, 208, 156, 0.12);
+  padding-top: 12px;
+  margin-top: 0;
+}
+
+/* --- Financial Snapshot --- */
+.financial-snapshot {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.snapshot-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--border-ultra-subtle);
+}
+
+.snapshot-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.snapshot-subtitle {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.snapshot-rows {
+  padding: 4px 0 8px;
+}
+
+.snapshot-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8px 16px;
+  gap: 12px;
+}
+
+.snapshot-row-emphasis {
+  background: rgba(0, 208, 156, 0.04);
+  border-radius: 0;
+}
+
+.snapshot-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.snapshot-row-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.snapshot-row-note {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.snapshot-row-value {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.snapshot-val-emphasis {
+  color: var(--groww-primary);
+}
+
+.snapshot-divider {
+  height: 1px;
+  background: var(--border-ultra-subtle);
+  margin: 4px 16px;
+}
+
+/* --- Intent Section --- */
+.intent-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.intent-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Reuses section-eyebrow, section-heading, section-subheading from app.css */
+
+.intent-chip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- Intent Chip --- */
+.intent-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 15px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.intent-chip:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.intent-chip-active {
+  background: var(--bg-card-selected);
+  border-color: var(--border-active);
+  box-shadow: 0 4px 16px rgba(0, 208, 156, 0.10), 0 0 0 1px var(--border-active);
+}
+
+.intent-chip-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-ultra-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.intent-chip-active .intent-chip-icon {
+  background: rgba(0, 208, 156, 0.14);
+  border-color: rgba(0, 208, 156, 0.30);
+  color: var(--groww-primary);
+}
+
+.intent-chip-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.intent-chip-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.intent-chip-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.intent-chip-selector {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  color: transparent;
+}
+
+.intent-chip-selector-active {
+  background: var(--groww-primary);
+  border-color: var(--groww-primary);
+  color: #070A0E;
+}
+
+/* --- Payday CTA --- */
+.payday-cta-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.payday-cta-btn {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  letter-spacing: -0.01em;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.payday-cta-active {
+  background: linear-gradient(135deg, #00D09C 0%, #00B386 100%);
+  color: #070A0E;
+  box-shadow: 0 4px 16px rgba(0, 208, 156, 0.28);
+}
+
+.payday-cta-active:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 208, 156, 0.36);
+}
+
+.payday-cta-active:active {
+  transform: scale(0.99);
+}
+
+.payday-cta-disabled {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  cursor: not-allowed;
+}
+
+.payday-cta-hint {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* --- Phase 2B Placeholder State --- */
+.payday-phase2b-placeholder {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  animation: fadeIn 200ms ease-out;
+}
+
+.phase2b-icon-row {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.phase2b-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.phase2b-body {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  max-width: 280px;
+}
+
+.phase2b-back-btn {
+  margin-top: 6px;
+  padding: 7px 16px;
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.phase2b-back-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+/* --- DecisionPreview: journey hint --- */
+.preview-journey-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--groww-primary);
+  background: var(--groww-primary-subtle);
+  border: 1px solid rgba(0, 208, 156, 0.15);
+  padding: 7px 10px;
+  border-radius: var(--radius-xs);
+}
